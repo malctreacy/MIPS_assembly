@@ -1,0 +1,25 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# Declare and add Integer Values: Assembly program to demonstrate how to declare and add two integer
+# values. 
+	# .word is used to store the integer value 
+	# lw is used to load the values into a register
+	# add command is used to add to registers and save them into a temp register ($t2)
+	
+.data
+	# Integer values are stored as words (32-bit data stores)
+	numberA: .word 5
+	numberB: .word 10
+.text
+	# Load the numberA into register $t0
+	lw $t0, numberA($zero)
+	# Load the numberB into register $t1
+	lw $t1, numberB($zero)
+	
+	# $t2 will get the value of $t0 + $t1
+	add $t2, $t0, $t1
+	
+	# Notify the system to prepare to print a .word
+	li $v0, 1
+	add $a0, $zero, $t2
+	syscall
