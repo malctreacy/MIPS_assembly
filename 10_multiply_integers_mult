@@ -1,0 +1,25 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# mult command
+# Declare and multiple large integer values.
+	# mult is the command used when you need to multiply numbers who product is greater than
+	# 32 bits.  
+	# mult will save the result into: 'lo' and 'hi'
+	# mflo ==> move from lo command to transfer the value of the product into a save value ($s0)
+.data
+.text
+	# store the value 2000 into 
+	addi $t0, $zero, 2000
+	addi $t1, $zero, 10
+	
+	# Multiplies t0 and t1
+	# Result is stored in the lo, and hi registers
+	mult $t0, $t1
+	
+	# stores the product of this multiplication into $s0
+	mflo $s0
+	
+	# Display the product to screen:
+	li $v0, 1
+	move $a0, $s0
+	syscall

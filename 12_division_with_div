@@ -1,0 +1,20 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# Declare two integer values and divide with the div instruction: Assembly program to demonstrate how to declare a
+# two integer values and divide one by the other. 
+	# div ==> div instruction to divide two values div SAVEVARIABLE OPERAND OPERAND
+	# the div method will store the result in another separate register
+.data
+.text
+	addi $t0, $zero, 30
+	addi $t1, $zero, 5
+	
+	# The value in $t0, divided by the value in $t1
+	div $s0, $t0, $t1
+	
+	# Print Value 
+	li $v0, 1
+	move $a0, $s0
+	syscall
+	
+	

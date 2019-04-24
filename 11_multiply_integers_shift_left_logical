@@ -1,0 +1,21 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# Declare and Multiple Integer values with sll: Assembly program to demonstrate how to declare a
+# integer values, and multiply them with sll
+	# sll ==> 'shift left logical' shifts bits to the left (multiplication)
+	# srl ==> 'shift right logical' shifts bits to the right (division)
+.data
+.text
+	# Add 4 to zero and save the value into $s0
+	addi $s0, $zero, 4
+	# SLL will multiply the contents by 2^i
+	# In this case 2^2 (4)
+	# 2 represents the exponent
+	sll $t0, $s0, 2
+	# Multiplies by 2 (2^1)
+	sll $t0, $s0, 1
+	
+	# Print the value to the screen
+	li $v0, 1
+	move $a0, $t0
+	syscall
