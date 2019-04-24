@@ -1,0 +1,18 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# Declare and Print Float Values: Assembly program to demonstrate how to declare an 
+# float value.  
+	# .float is used to declare the type. 
+	# li $v0, 2 is used to notify the system you want to print a float. 
+	# lwc1 is "load word co-processor 1" which loads our float into a special register that is capable of handling float values. 
+
+.data
+	PI: .float 3.14
+.text
+	# Orders the system to prepare to print a float (2 = float)
+	li $v0, 2 
+	# Orders the system to loa dthe value in PI, and put it in $f12
+	# lwc1 -- > "load word co-processor 1", code processor 1 processes float values
+	lwc1 $f12, PI 
+	# Orders the system to print the float value
+	syscall

@@ -1,10 +1,13 @@
+# Author: Malcolm Treacy
+# Date: 4.24.19
+# Sum of Ranges: Calculates and prints the sum of a predetermined range.
+
 # Data section this is the program memory area
 # Data such as arrays and strings are allocated and stored in the data section
 .data
 
 # Assembly instustions will be located in the .text section
 .text
-
 # Similar to C/C++ programs, every MIPS program is expected to have a main
 # label, this indicates the program's entry point.
 
