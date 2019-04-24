@@ -23,5 +23,8 @@
 	# Tells the system to get ready to print a double
 	li $v0, 3 
 	# $f12 is the argument storage are for doubles, and floats
+	# add.d tells the assembler to add two floats (in this case you add 0 + 7.202)
+	# this stores the result in $f12
 	add.d $f12, $f2, $f0 
+	# Tells the system to execute the print statement
 	syscall
