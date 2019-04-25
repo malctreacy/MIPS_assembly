@@ -4,6 +4,7 @@
 	# Functions in assembly languages are called procedures
 	# procedures are declared with 'labels' [nameOfLabel]:
 	# ended with a jr $ra
+	# Return values, parameter values can also be impl
 .data
 	# Msg in random access memory
 	myMessage: .asciiz "Hello everybody\nmy name is Malcolm\n"
@@ -29,4 +30,3 @@ syscall
 		# jr == > defined as "jump register"
 		# Means go back to the procedure that called it
 		jr $ra
-			
