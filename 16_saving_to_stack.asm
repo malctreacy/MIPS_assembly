@@ -51,6 +51,7 @@
 		move $a0, $s0
 		syscall
 		
+		# restore the original value by getting it from the stack
 		# Now we will load the register from memory back into $s0
 		lw $s0, 0($sp)
 		# Restore the stack:
